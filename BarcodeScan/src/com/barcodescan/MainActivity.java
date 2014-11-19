@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+
 public class MainActivity extends ActionBarActivity {
 
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,9 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+        
+       
+        
     }
 
 
