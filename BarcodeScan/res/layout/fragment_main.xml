@@ -9,21 +9,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.barcodescan.MainActivity$PlaceholderFragment" >
 
-    <FrameLayout
-        android:id="@+id/cameraPreview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-    <Button
-        android:id="@+id/button1"
-        style="@style/ButtonText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/buttonstates"
-        android:text="@string/scanButton" />
 
 </RelativeLayout>
