@@ -15,10 +15,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 //import com.barcodescan.BarcodeData;
@@ -31,13 +30,13 @@ public class MainActivity extends Activity {
 
 	TextView scanText;
 	Button scanButton;
-
+	ImageView image;
+	
 	ImageScanner scanner;
 
 	private boolean barcodeScanned = false;
 	private boolean previewing = true;
 	
-	Animation animFadein;
 
 	static {
 		System.loadLibrary("iconv");
@@ -48,11 +47,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		
-		// load the animation
-        animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.fade_in);  
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);	
 
 		autoFocusHandler = new Handler();
 		mCamera = getCameraInstance();
@@ -72,6 +67,8 @@ public class MainActivity extends Activity {
 
 		scanButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				
+				
 				if (barcodeScanned) {
 					barcodeScanned = false;
 					scanText.setText("Scanning...");
